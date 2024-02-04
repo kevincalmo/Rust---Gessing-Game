@@ -5,12 +5,8 @@ fn generate_random_number(min: u8, max: u8) -> u8 {
     return rand::thread_rng().gen_range(min..=max);
 }
 
-fn gessing_number() {}
-
-fn main() {
-    // Creating a random number between 1 and 10
-    let secret_number: u8 = generate_random_number(1, 10);
-    println!("Guess the secret number!");
+// function that return anything ( void )
+fn gessing_number(secret_number: u8) -> () {
     loop {
         println!("Please input your guess.");
         //Creation of a mutable variable that can change value during program execution
@@ -40,4 +36,11 @@ fn main() {
             }
         }
     }
+}
+
+fn main() {
+    // Creating a random number between 1 and 10
+    let secret_number: u8 = generate_random_number(1, 10);
+    println!("Guess the secret number!");
+    gessing_number(secret_number);
 }
