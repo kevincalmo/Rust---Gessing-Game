@@ -44,3 +44,17 @@ fn main() {
     println!("Guess the secret number!");
     gessing_number(secret_number);
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_generate_random_number() -> Result<(), String> {
+        let min = 1;
+        let max = 100;
+        let result = generate_random_number(min, max);
+        assert_eq!(result, result as u8);
+        Ok(())
+    }
+}
