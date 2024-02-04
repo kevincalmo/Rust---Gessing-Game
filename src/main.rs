@@ -1,9 +1,15 @@
 use rand::Rng;
 use std::{cmp::Ordering, io};
 
+fn generate_random_number(min: u8, max: u8) -> u8 {
+    return rand::thread_rng().gen_range(min..=max);
+}
+
+fn gessing_number() {}
+
 fn main() {
     // Creating a random number between 1 and 10
-    let secret_number: u8 = rand::thread_rng().gen_range(1..=10);
+    let secret_number: u8 = generate_random_number(1, 10);
     println!("Guess the secret number!");
     loop {
         println!("Please input your guess.");
